@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %} {% load static %} {% block head_title %}Banking System{% endblock %} {% block content %}
+<div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+{% if user.is_authenticated %}
+     <div class="w-full lg:w-1/2 lg:py-6 text-center">
+        <h1 style="font-size: 12rem" class="font-black text-blue-900 text-opacity-50"></h1>
+    </div>
+    <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6 bg-white rounded-2xl bg-opacity-70">
+        <h1 class="font-bold text-4xl my-4">ABC COLLEGE STORE</h1>
+        <p class="leading-normal mb-4">
+           This is the new page
+
+        </p>
+        <div class="flex justify-end w-full">
+            <a href="{% url 'schoolapp:person_add' %}" class="bg-blue-900 text-white rounded-none hover:bg-white hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent">Form</a>
+        </div>
+    </div>
+{% else %}
+    <div class="w-full lg:w-1/2 lg:py-6 text-center">
+        <h1 style="font-size: 12rem" class="font-black text-blue-900 text-opacity-50">&#x20B1;&#x20B1;</h1>
+    </div>
+    <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6 bg-white rounded-2xl bg-opacity-70">
+        <h1 class="font-bold text-4xl my-4">ABC COLLEGE STORE</h1>
+        <p class="leading-normal mb-4">
+            Aliquam ornare dolor ac est egestas, et scelerisque urna viverra. Suspendisse ornare fringilla libero non posuere. Nulla consectetur posuere magna, vel dignissim erat pellentesque vitae. Aenean varius est lacus. Maecenas mauris nulla, venenatis sit amet blandit volutpat, ornare at neque. Integer fringilla elit diam, sed scelerisque augue dignissim ut. Morbi tincidunt finibus nisl, laoreet ultricies ante tincidunt et. Donec accumsan pharetra justo non dignissim. Aliquam vitae posuere eros, quis auctor libero. Proin mi felis, pretium sit amet metus in, condimentum sodales neque. Nam eget dui eget ante rutrum efficitur eu vitae est. Nulla tincidunt et justo vel luctus. Nunc nibh justo, finibus consectetur enim a, porta tempus turpis. Sed tincidunt lacinia nibh, a vehicula purus efficitur a. In eleifend purus eu diam tempus tempus. Fusce quis aliquam diam, id dapibus massa.
+
+        </p>
+        <div class="flex justify-end w-full">
+            <a href="{% url 'schoolapp:register' %}" class="bg-blue-900 text-white rounded-none hover:bg-white hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent">Register</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

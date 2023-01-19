@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %} {% load static %} {% block head_title %}Banking System{% endblock %} {% block content %}
+
+<form action="register" method="post">
+  {% csrf_token %}
+  <div class="container">
+    <h1>Register</h1>
+    <p>This is the registration form.</p>
+    <hr>
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw_repeat" id="psw-repeat" required>
+    <hr>
+
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+
+</form>
+{% endblock %}
